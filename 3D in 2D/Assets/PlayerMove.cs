@@ -16,7 +16,7 @@ public class PlayerMove : MonoBehaviour
     {
         
         Vector2 move = new Vector2(Input.GetAxisRaw("Vertical"), -Input.GetAxisRaw("Horizontal"));
-        var velocity = ((transform.up * move.y) + (transform.right * move.x)).normalized * Time.deltaTime * 100;
+        var velocity = ((transform.up * move.y) + (transform.right * move.x)).normalized * 500 *Time.deltaTime;
         rb.velocity = (velocity);
         //rb.MovePosition(rb.position + move * .1f);
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, Input.mousePosition.x * -.19f));
